@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="tableMapper">
+
+	<insert id="piInsert">
+		insert into pickup
+		values (#{pino}, #{pithing},
+		#{pithingmore}, #{piloc}, #{pidate},#{pitime},
+		#{storage},
+		#{regidate}, #{yourinfo})
+	</insert>
+
+	<select id="piMainSelect" resultType="model.PickupVO">
+		select *
+		from pickup order by regidate desc
+	</select>
+
+	<select id="piMoreSelect" resultType="Map"><!-- "더보기"용 -->
+		select *
+		from pickup
+		where pino = #{num} order by regidate desc
+	</select>
+
+	<select id="piSearch" parameterType="String" resultType="model.PickupVO">
+		select * from pickup where pithing like '%'||#{word}||'%' or piloc like '%'||#{word}||'%' 
+		or pidate like '%'||#{word}||'%' or pitime like '%'||#{word}||'%' or storage like '%'||#{word}||'%'
+		or yourinfo like '%'||#{word}||'%' order by regidate desc
+	</select>
+
+	<delete id="piDelete">
+       <![CDATA[delete pickup where regidate<(sysdate-180)]]>
+	</delete>
+
+	<select id="piMaxNo" resultType="int">
+		select max(pino)
+		from pickup
+	</select>
+
+	<insert id="loInsert"><!-- '찾아주세요' 데이터 삽입 -->
+		insert into lost
+		values(#{lono},#{lothing},#{lothingmore},#{loloc},#{lodate},#{lotime},#{regidate},#{loyourinfo})
+	</insert>
+
+	<select id="loMainSelect" resultType="model.LostVO"><!-- '찾아주세요'창에 데이터 출력 -->
+		select *
+		from lost
+	</select>
+
+	<select id="loMoreSelect" resultType="Map"><!-- '찾아주세요'창의 더보기에 데이터 출력 -->
+		select *
+		from lost
+		where lono
+		= #{num}
+	</select>
+
+	<select id="loSearch" resultType="Map"><!-- '찾아주세요'창의 검색 -->
+		select *
+		from lost
+		where lono =
+		#{word} or lothing = #{word} or lothingmore = #{word} or loloc
+		=
+		#{word} or
+		lodate = #{word} or lotime = #{word} or
+		regidate = #{word} or
+		loyourinfo = #{word}
+	</select>
+
+	<delete id="loDelete"><!-- '찾아주세요'창의 삭제 -->
+       <![CDATA[delete pickup where regidate<(sysdate-180)]]>
+	</delete>
+
+	<select id="loMaxNo" resultType="int"><!-- '찾아주세요'데이터 삽입 시, 고유번호 지정하기위함 -->
+		select max(lono)
+		from lost
+	</select>
+
+
+</mapper>
