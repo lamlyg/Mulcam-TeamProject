@@ -1,6 +1,7 @@
 # 캠퍼스 내 분실물 관리 시스템
 term project for SW training <br />
 - Project execution period : 2019.01.25~2019.01.31 <br/>
+- Purpose : 멀티캠퍼스 SW연수 '알고리즘을 위한 JAVA 과정' 최종 팀프로젝트 수행
 - email address : lamlyg@naver.com <br />
 
 ## Introduction
@@ -23,7 +24,7 @@ term project for SW training <br />
 ### Project Purpose
 1. SW연수를 이수하면서 배운 것을 최대로 활용할 수 있는지 확인 
 2. 간단하면서도 실생활에서 실질적으로 사용할 수 있는 프로그램을 구현하고자 한다.
-### Design
+### Design 
 [Project Design](https://github.com/lamlyg/Mulcam-TeamProject/blob/master/Project_Prototype.pdf)
 1. MainView : 찾아가세요 찾아주세요 버튼 생성
 2. FindForm : search 및 Jtable 생성
