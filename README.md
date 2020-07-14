@@ -94,4 +94,4 @@ term project for SW training <br />
 <br />
 
 ## Final Presentation PPT
-[Presentation] (https://github.com/lamlyg/Mulcam-TeamProject/blob/master/Project_Report.pdf)
+[Presentation](https://github.com/lamlyg/Mulcam-TeamProject/blob/master/Project_Report.pdf)
