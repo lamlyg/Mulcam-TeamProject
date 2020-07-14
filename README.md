@@ -24,6 +24,7 @@ term project for SW training <br />
 1. SW연수를 이수하면서 배운 것을 최대로 활용할 수 있는지 확인 
 2. 간단하면서도 실생활에서 실질적으로 사용할 수 있는 프로그램을 구현하고자 한다.
 ### Design
+[Project Design](https://github.com/lamlyg/Mulcam-TeamProject/blob/master/Project_Prototype.pdf)
 1. MainView : 찾아가세요 찾아주세요 버튼 생성
 2. FindForm : search 및 Jtable 생성
 3. FindView : 더보기 버튼 클릭 시 고유번호 matching 및 DB에서 해당 정보 추출
